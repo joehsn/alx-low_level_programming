@@ -2,8 +2,11 @@
 
 /*
  * main - Entry point
+ *
  * Description: 'a program that prints exactly "Programming is like..'
+ * 
  * Return: Always 0 (Success)
+ *
  */
 
 int main(void)
