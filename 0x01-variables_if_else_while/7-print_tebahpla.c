@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
-* main - entry point
-* return - 0
+* main - Entry point
+* description: as the f file name describes
+* Return: always  0 (Success)
 */
 
 int main(void)
