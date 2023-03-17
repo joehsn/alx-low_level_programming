@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 /**
-*
-* main - prints all possible combinations of single-digit numbers
-*
-* Return always 0
-*/
+ * main - Prints all possible combinations of single-digit numbers.
+ *
+ * Return: Always 0.
+ */
 
 int main(void)
 {
-	sssint n;
+	int n;
 
 	for (n = 0; n <= 9; n++)
 	{
