@@ -2,21 +2,20 @@
 #include <stdlib.h>
 
 /**
- * main - entry point
- * return 0;
+ * main - Entry point
+ *
+ * Return: 0
  */
-
 int main(void)
 {
-    char a;
-    a = 'a';
+	char a = 'a';
 
-    while (a <= 'z')
-    {
-        putchar(a);
-        a++;
-    }
+	while (a <= 'z')
+	{
+		putchar(a);
+		a++;
+	}
 
-    putchar('\n');
-    return 0;
+	putchar('\n');
+	return (0);
 }
