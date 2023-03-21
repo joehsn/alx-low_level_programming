@@ -1,10 +1,11 @@
-#include "main.h"
 
 /**
- * main - write a program that prints _putchar, followed by a new line.
- *
- * return always success
+ * main - entry point
+ * Description: write a program that prints _putchar, followed by a new line.
+ * @return: always success
  */
+
+#include "main.h"
 
 int main(void)
 {
