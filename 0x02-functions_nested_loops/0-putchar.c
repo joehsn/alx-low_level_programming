@@ -8,6 +8,12 @@
 
 int main(void)
 {
-	printf("_putchar\n");
+	char *pc = "_putchar"
+	while (*pc)
+	{
+		_putchar(*pc);
+		pc++;
+	}
+	_putchar('\n');
 	return (0);
 }
