@@ -6,7 +6,7 @@
  * Return: sum of a and b
  */
 
-#include "main"
+#include "main.h"
 
 int add(int a, int b)
 {
