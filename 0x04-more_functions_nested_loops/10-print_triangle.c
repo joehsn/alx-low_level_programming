@@ -5,30 +5,24 @@
  *
  * @size: a param
  *
- * Return: nothing
+ * Return: void
  */
 
 void print_triangle(int size)
 {
-	int x, y, z;
+	int i, j;
 
 	if (size <= 0)
 	{
 		_putchar('\n');
+		return;
 	}
-	else
+	for (i = 0; i < size; i++)
 	{
-		for (y = 0; y < size; y++)
-		{
-			for (x = 0; x < (size - y); x++)
-			{
-				_putchar(' ');
-			}
-			for (z = y; z > 0; z--)
-			{
-				_putchar('#');
-			}
-			_putchar('\n');
-		}
+		for (j = 0; j < size - i - 1; j++)
+			_putchar(' ');
+		for (j = 0; j <= i; j++)
+			_putchar('#');
+		_putchar('\n');
 	}
 }
