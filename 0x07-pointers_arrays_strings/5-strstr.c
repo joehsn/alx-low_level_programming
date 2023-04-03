@@ -2,7 +2,6 @@
 #include <string.h>
 
 /**
- *
  * _strstr - a function that locates a substring
  *
  * @haystack: a param
