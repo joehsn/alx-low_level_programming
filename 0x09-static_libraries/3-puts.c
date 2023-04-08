@@ -1,9 +1,15 @@
 #include "main.h"
+
 /**
- * _puts - bla bla bla
- *
- * @str: a param
- *
+ * _puts - prints a string
+ * @str: The string
  * Return: void
  */
-void _puts(char *str);
+
+void _puts(char *str)
+{
+	while (*str)
+		_putchar(*str++); /*counts each allocated character memory*/
+
+	_putchar('\n');
+}
