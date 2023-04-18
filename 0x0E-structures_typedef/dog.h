@@ -2,19 +2,18 @@
 #define DOG_H
 
 /**
- * struct dog - a structer for dog info.
- *
- * @name: dog's name
- *
- * @age: dog's age
- *
- * @owner: dog's owner name
- */
+* struct dog - a new type that describes a dog
+* @name: the name of the dog
+* @age: the age of the dog
+* @owner: the owner of the dog
+**
+* A struct that describes a dog with its name, age, and owner.
+*/
 
 struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+}
 #endif /* DOG_H */
