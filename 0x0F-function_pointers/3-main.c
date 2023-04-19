@@ -1,4 +1,6 @@
 #include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * main - the main function
@@ -10,39 +12,36 @@
  * Return: an intger
  */
 
-int main(int argc, char const *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	int first;
-	int second;
-	int result;
-	char opr;
-	int (*func)(int, int)
+	int num1, num2;
+	char *op;
 
-		if (argc != 4)
-		{
-			printf("Error\n");
-			exit(98);
-		}
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-	first = atoi(argv[3]);
-	second = atoi(argv[1]);
-	func = get_op_func(argv[2]);
+	num1 = atoi(argv[1]);
+	op = argv[2];
+	num2 = atoi(argv[3]);
 
-	if (!func)
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	opr = *argv[2];
-
-	if ((opr == '/' || opr == '%') && second == 0)
+	if ((*op == '/' && num2 == 0) ||
+			(*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	result = func(first, second);
-	printf("%d\n", result);
+
+	printf("%d\n", get_op_func(op)(num1, num2));
+
 	return (0);
 }
 
