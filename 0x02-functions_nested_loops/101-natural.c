@@ -9,13 +9,12 @@
 
 int main(void)
 {
-	int target = 1024, sum = 0, i = 0;
+	int sum = 0, i;
 
-	while (i < target)
+	for (i = 0; i < 1024; i++)
 	{
 		if ((i % 3 == 0) && (i % 5 == 0))
 			sum += i;
-		i++;
 	}
 
 	printf("%d\n", sum);
