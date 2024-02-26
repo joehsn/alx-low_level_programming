@@ -1,0 +1,30 @@
+# Compiler to be used
+CC = gcc
+
+# Source files
+SRC = main.c school.c
+
+# Object files (automatically generated)
+OBJ = $(patsubst %.c, %.o, $(SRC))
+
+# Name of the executable
+NAME = school
+
+# Build the all target:
+all: $(NAME)
+
+# Rule to compile each source file into its corresponding object file:
+%.o: %.c
+	$(CC) -c -o $@ $<
+
+# Rule to link the object files to create the executable:
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $@
+
+# Phony target to clean object files:
+clean:
+	rm -f $(OBJ)
+
+# Phony target to rebuild everything:
+.PHONY: clean
+
