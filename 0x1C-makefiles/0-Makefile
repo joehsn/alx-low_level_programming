@@ -1,0 +1,6 @@
+# Name of the executable
+all: school
+
+# Rule to build the executable
+school: main.c school.c
+	gcc main.c school.c -o school
