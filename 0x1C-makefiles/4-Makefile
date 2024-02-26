@@ -1,0 +1,46 @@
+# Compiler to be used
+CC = gcc
+
+# Program to delete files
+RM = rm -f
+
+# Your favorite compiler flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Source files
+SRC = main.c school.c
+
+# Object files (automatically generated)
+OBJ = $(patsubst %.c, %.o, $(SRC))
+
+# Name of the executable
+NAME = school
+
+# Build the all target:
+all: $(NAME)
+
+# Rule to compile each source file into its corresponding object file:
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Rule to link the object files to create the executable:
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
+
+# Phony target to clean object files:
+oclean:
+	$(RM) $(OBJ)
+
+# Phony target to clean temporary and executable files:
+clean:
+	$(RM) *~ $(NAME)
+
+# Phony target to clean everything:
+fclean: oclean clean
+
+# Phony target to force recompilation of all:
+re: fclean all
+
+# Ensure clean, oclean, fclean, and re always succeed:
+.PHONY: clean oclean fclean re
+
