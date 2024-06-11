@@ -11,5 +11,13 @@
 
 int _strlen(char *s)
 {
-	return (strlen(s));
+  int length = 0;
+ /* This derefence the pointer to check wheihter the value is falsey value */
+  while (*s)
+  {
+    length++;
+    /* This line updates the address of the `s` pointer */
+    s++;
+  }
+  return (length);
 }
