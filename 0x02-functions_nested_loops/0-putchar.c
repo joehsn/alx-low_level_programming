@@ -1,12 +1,10 @@
+#include "main.h"
 
 /**
  * main - entry point
  * Description: write a program that prints _putchar, followed by a new line.
  * Return: Always 0 (Success)
  */
-
-#include "main.h"
-
 int main(void)
 {
 	char *pc = "_putchar";
