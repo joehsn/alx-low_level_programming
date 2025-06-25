@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+#define ll long long
 
 /**
  * main - a program that prints the first 50 Fibonacci numbers,
@@ -9,16 +10,17 @@
  */
 int main(void)
 {
-	int prev = 0 + 1;
+  ll prev_1 = 0;
+	ll prev_2 = 1;
 	int i;
+  ll sum;
 
-	for (i = 1; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
-		if (i == 50)
-			printf("%d\n", prev);
-		else
-			printf("%d, ", prev);
-		prev += i;
+    sum = prev_1 + prev_2;
+    printf("%llu\n", sum);
+    prev_1 = prev_2;
+    prev_2 = sum;
 	}
 	return (0);
 }
