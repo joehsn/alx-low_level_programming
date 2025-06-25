@@ -1,5 +1,6 @@
 #include "main.h"
-#include <stdlib.h>
+#include <math.h>
+
 
 int count_digits(const int n);
 /**
@@ -24,55 +25,44 @@ void print_times_table(int n)
 		{
 			int res = row * col;
 			int res_digits = count_digits(res);
-			int *rev_res_digits = (int *)malloc(sizeof(int) * res_digits);
 			int spaces = total_digits - res_digits;
-			int i;
+			int divisor;
+
+			while (spaces > 0)
+			{
+				_putchar(' ');
+				spaces--;
+			}
+
+			if (res < 0)
+			{
+				_putchar('-');
+				res = -res;
+			}
 
 			if (res == 0)
 			{
-				if (col > 0)
-				{
-					while (spaces)
-					{
-						_putchar(' ');
-						spaces--;
-					}
-					_putchar('0');
-				}
-				else
-				{
-					_putchar('0');
-				}
+				_putchar('0');
 			}
 			else
 			{
-				for (i = res_digits - 1; i >= 0; i--)
-				{
-					rev_res_digits[i] = res % 10;
-					res /= 10;
-				}
+				divisor = 1;
 
-				i = 0;
+				while ((res / divisor) >= 10)
+					divisor *= 10;
 
-				while (spaces)
+				while (divisor != 0)
 				{
-					_putchar(' ');
-					spaces--;
-				}
-
-				for (i = 0; i < res_digits; i++)
-				{
-					_putchar(rev_res_digits[i] + '0');
+					_putchar((res / divisor) % 10 + '0');
+					divisor /= 10;
 				}
 			}
 
-			free(rev_res_digits);
-
-			if (col == n)
-				continue;
-
-			_putchar(',');
-			_putchar(' ');
+			if (col < n)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
