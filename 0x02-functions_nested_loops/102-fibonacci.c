@@ -11,14 +11,22 @@
 int main(void)
 {
 	int i;
-  ul prev_1 = 0, prev_2 = 1, sum;
+	ul prev_1 = 0, prev_2 = 1, sum;
 
 	for (i = 0; i < 50; i++)
 	{
-    sum = prev_1 + prev_2;
-    printf("%lu\n", sum);
-    prev_1 = prev_2;
-    prev_2 = sum;
+		sum = prev_1 + prev_2;
+		printf("%lu", sum);
+
+		if (i == 49)
+			putchar('\n');
+		else
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		prev_1 = prev_2;
+		prev_2 = sum;
 	}
 	return (0);
 }
