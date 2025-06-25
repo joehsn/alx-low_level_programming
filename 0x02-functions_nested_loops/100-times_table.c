@@ -1,5 +1,4 @@
 #include "main.h"
-#include <math.h>
 
 
 int count_digits(const int n);
@@ -28,7 +27,7 @@ void print_times_table(int n)
 			int spaces = total_digits - res_digits;
 			int divisor;
 
-			while (spaces > 0)
+			while (spaces > 0 && col > 0)
 			{
 				_putchar(' ');
 				spaces--;
