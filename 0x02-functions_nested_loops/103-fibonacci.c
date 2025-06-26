@@ -9,21 +9,22 @@
  */
 int main(void)
 {
-	ul prev_1 = 1, prev_2 = 2, fib = 0, sum = 0;
+	ul prev_1 = 0, prev_2 = 1, fib = 0, sum = 0;
 
 	while (1)
 	{
-		if (sum >= 4000000)
+		fib = (prev_1 + prev_2);
+
+		if (fib > 4000000)
 			break;
 
-		if (fib % 2 == 0)
+		if ((fib % 2) == 0)
 			sum += fib;
 
-		fib += (prev_1 + prev_2);
 		prev_1 = prev_2;
 		prev_2 = fib;
 	}
 
-	printf("%lu\n", fib);
+	printf("%lu\n", sum);
 	return (0);
 }
