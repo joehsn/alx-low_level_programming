@@ -2,29 +2,28 @@
 
 #define ul unsigned long
 /**
-* main - a program that finds and prints the sum of
-* the even-valued terms, followed by a new line.
-*
-* Return: always 0.
-*/
+ * main - a program that finds and prints the sum of
+ * the even-valued terms, followed by a new line.
+ *
+ * Return: always 0.
+ */
 int main(void)
 {
-  ul prev_1 = 1, prev_2 = 2, fib = 0, sum = 0;
+	ul prev_1 = 1, prev_2 = 2, fib = 0, sum = 0;
 
-  while (1)
-  {
-    printf("%lu\n", sum);
-    if (sum >= 4000000)
-      break;
+	while (1)
+	{
+		if (sum >= 4000000)
+			break;
 
-    if (fib % 2 == 0)
-      sum += fib;
+		if (fib % 2 == 0)
+			sum += fib;
 
-    fib += (prev_1 + prev_2);
-    prev_1 = prev_2;
-    prev_2 = fib;
-  }
+		fib += (prev_1 + prev_2);
+		prev_1 = prev_2;
+		prev_2 = fib;
+	}
 
-  printf("%lu\n", sum);
-  return (0);
+	printf("%lu\n", fib);
+	return (0);
 }
