@@ -15,28 +15,26 @@ int main(void)
 
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (((i % 3) == 0) && ((i % 5) == 0))
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else if (i % 3 == 0)
 		{
-			printf("Fizz ");
-		}
-		else if (i + 1 == 100)
-		{
-			printf("%d", i);
+			printf("Fizz");
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%d", i);
 		}
+		if (i < 100)
+			putchar(' ');
 	}
 
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
