@@ -8,18 +8,21 @@
  * Return: a coded
  */
 
-char *rot13(char *str) {
-  int i;
+char *rot13(char *str)
+{
+	const char *ALPHAs = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+	      *aphas = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i, j;
 
-  for (i = 0; str[i] != '\0'; i++) {
-    char cc = str[i];
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (!(str[i] == ALPHAs[j]))
+				continue;
+			str[i] = aphas[j];
+		}
+	}
 
-    if (cc >= 'a' && cc <= 'z') {
-      str[i] = (cc - 'a' + 13) % 26 + 'a';
-    } else if (cc >= 'A' && cc <= 'Z') {
-      str[i] = (cc - 'A' + 13) % 26 + 'A';
-    }
-  }
-
-  return (str);
+	return (str);
 }
