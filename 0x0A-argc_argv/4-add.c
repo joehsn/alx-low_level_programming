@@ -26,16 +26,16 @@ int main(int argc, char *argv[])
 	for (i = 1; i < argc; i++)
 	{
 		len = strlen(argv[i]);
-    for (j = 0; j < len; j++)
-    {
-      c = argv[i][j];
-      if (!(c > 47 && c < 58))
-      {
-        puts("Error");
-        return (1);
-      }
-    }
-    num = atoi(argv[i]);
+		for (j = 0; j < len; j++)
+		{
+			c = argv[i][j];
+			if (!(c > 47 && c < 58))
+			{
+				puts("Error");
+				return (1);
+			}
+		}
+		num = atoi(argv[i]);
 		sum += num;
 	}
 	printf("%d\n", sum);
