@@ -10,7 +10,7 @@
  * Return: an intger
  */
 
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int i;
 
@@ -18,5 +18,5 @@ int main(int argc, char *argv[])
 	{
 		printf("%s\n", argv[i]);
 	}
-	return (argc);
+	return (0);
 }
