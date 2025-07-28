@@ -13,16 +13,19 @@
  * Return: a string
  */
 
-
 char *_strdup(char *str)
 {
 	char *new_str;
-	int len = (strlen(str) + 1);
+	int i, len = strlen(str) + 1;
 
 	new_str = malloc(sizeof(char) * len);
 	if (new_str == NULL)
 		return (NULL);
-	memcpy(new_str, str, len);
+
+	for (i = 0; i < len; i++)
+		new_str[i] = str[i];
+	new_str[len] = '\0';
+
 	return (new_str);
 	free(new_str);
 }
